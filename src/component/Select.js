@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './App.css';
+import './Select.css';
 
-class App extends Component {
+class Select extends Component {
 constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -16,7 +16,7 @@ constructor(props) {
   }
 
   handleSubmit(event) {
-    alert('A name was created: ' + this.state.value);
+    this.setState({value: event.target.value});
     event.preventDefault();
   }
 
@@ -30,15 +30,13 @@ constructor(props) {
         <br />
         <div>
           <form onSubmit={this.handleSubmit}>
-            <label>
-              Email:<br />
-              <input type="text" name="Email" value={this.state.value} onChange={this.handleChange} />
+              <input type="checkbox" name="Porter" value="Porter"/>
               <br />
-              Password:<br />
-              <input type="text" name="Password" />
-            </label>
-            <br />
-            <input type="submit" value="Create" className="Create" />
+              <input type="checkbox" name="Lagiur" value="Lagiur"/>
+              <br />
+              <input type="checkbox" name="IPA" value="IPA"/>
+              <br />
+            <input type="submit" value="Submit" className="Submit" />
           </form>
         </div>
       </div>
