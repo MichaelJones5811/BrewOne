@@ -44,4 +44,4 @@ constructor(props) {
   }
 }
 
-export default App;
+export default Select;
