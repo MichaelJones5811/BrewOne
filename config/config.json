@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "",
-    "password": "",
-    "database": "",
+    "username": "root",
+    "password": "Freedom21",
+    "database": "brew_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
