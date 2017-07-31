@@ -22,7 +22,7 @@ app.use(express.static("public"));
 
 
 // Requiring our routes
-
+require("./controllers/routes/recipeRoutes.js")(app);
 
 
 
