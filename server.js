@@ -23,7 +23,8 @@ app.use(express.static("public"));
 
 // Requiring our routes
 require("./controllers/routes/recipeRoutes.js")(app);
-
+require("./controllers/routes/receiptRoutes.js")(app);
+   
 
 
 // Syncing our database and logging a message to the user upon success

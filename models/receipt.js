@@ -8,6 +8,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.FLOAT
     }
   });
-
+  
   return Receipt;
 };
