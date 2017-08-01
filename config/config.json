@@ -1,14 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": "Jordan23!",
-    "database": "brew_db",
+
+    "password": "    ",
+    database": "brew_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "Keo$10261987",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
