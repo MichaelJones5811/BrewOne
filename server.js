@@ -24,6 +24,7 @@ app.use(express.static("public"));
 // Requiring our routes
 require("./controllers/routes/recipeRoutes.js")(app);
 require("./controllers/routes/receiptRoutes.js")(app);
+require("./controllers/routes/vendorMasterRoutes.js")(app);
    
 
 
