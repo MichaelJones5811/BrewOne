@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 //import './Sales.css';
 
-class Sales extends Component {
+
+export default class Sales extends Component {
 constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -44,4 +45,3 @@ constructor(props) {
   }
 }
 
-export default Sales
