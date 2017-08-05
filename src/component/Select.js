@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './Select.css';
+//import './Select.css';
 
 class Select extends Component {
 constructor(props) {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 //import './Sales.css';
 
-class Sales extends Component {
+class Receipts extends Component {
 constructor(props) {
     super(props);
     this.state = {value: ''};

@@ -1,9 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 //import './Sales.css';
 
-
-export default class Sales extends Component {
+class InvAdj extends Component {
 constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -25,23 +24,27 @@ constructor(props) {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Enter Your Weekly Sales</h2>
+          <h2>Enter Any Weekly Inventory Losses</h2>
           <br />
         </div>
         <form onSubmit={this.handleSubmit}>
             <label>
-            Item Sold:<br />
-              <input type="text" name="Item" />
+            Ingredient Lost:<br />
+              <input type="text" name="Ingredient" />
               <br />
-            Quantity Sold This Week:<br />
-              <input type="number" name="salesQty" value={this.state.value} onChange={this.handleChange} />
+            Quantity Adjusted This Week:<br />
+              <input type="number" name="lossQty" value={this.state.value} onChange={this.handleChange} />
               <br />
+            Loss Reason:<br />
+              <input type="text" name="reasonCode" />
+              <br /> 
             </label>
             <br />
-            <input type="submit" value="enterSales" className="wklySales" />
+            <input type="submit" value="enterLoss" className="wklyLoss" />
           </form>
         </div>
     );
   }
 }
 
+export default InvAdj
