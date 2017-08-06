@@ -1,6 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-
+var exphbs = require('express-handlebars');
 
 
 
@@ -21,11 +21,19 @@ app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
 
 
+//Handlebars config
+app.engine('handlebars', exphbs({
+    defaultLayout: 'main'
+}));
+
+app.set('view engine', 'handlebars');
+
 // Requiring our routes
 require("./controllers/routes/recipeRoutes.js")(app);
 require("./controllers/routes/receiptRoutes.js")(app);
 require("./controllers/routes/vendorMasterRoutes.js")(app);
-   
+require("./controllers/routes/htmlRoutes.js")(app);
+
 
 
 // Syncing our database and logging a message to the user upon success

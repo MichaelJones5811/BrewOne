@@ -25,6 +25,10 @@ constructor(props) {
       <div className="App">
         <div className="App-header">
           <h2>Welcome to BrewOne</h2>
+          <a href="http://localhost:8080/inventoryadjust" class="btn btn-primary">Inventory Adjustment,  </a>
+          <a href="http://localhost:8080/receipts" class="btn btn-primary">Receipts,  </a>
+          <a href="http://localhost:8080/sales" class="btn btn-primary">Sales,  </a>
+          <a href="http://localhost:8080/vendor" class="btn btn-primary">Vendor,  </a>
           <br />
         </div>
         <br />
