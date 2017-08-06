@@ -4,13 +4,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    item: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     quantity: {
       type: DataTypes.FLOAT
     }
+  },{
+    timestamps: false
   });
 
   return Ingredient;
