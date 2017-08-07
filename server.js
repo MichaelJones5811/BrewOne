@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require('express-handlebars');
-var 
+
 
 
 
@@ -37,7 +37,7 @@ require("./controllers/routes/htmlRoutes.js")(app);
 
 
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync({force: true}).then(function() {
+db.sequelize.sync({force: false}).then(function() {
   app.listen(PORT, function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
