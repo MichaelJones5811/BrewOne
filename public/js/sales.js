@@ -6,6 +6,7 @@ $.get("/api/recipe", function(req) {
 });
 
 $("#submit-sales").on("click", function() {
+    $("#salesMessage").empty();
     var chosenItem = $("#beerType").val().trim();
     var pintsSold = $("#pintsSold").val().trim();
     var salesInfo = {
