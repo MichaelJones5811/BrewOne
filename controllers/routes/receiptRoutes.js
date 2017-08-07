@@ -18,7 +18,8 @@ module.exports = function(app) {
   });
   //Create Reciept of goods for a user
 	app.post("/api/newreceipt", function(req, res) {
-    db.Listing.create({
+    
+    db.Receipt.create({
       ingredient: req.body.ingredient,
       quantity: req.body.quantity,
       
