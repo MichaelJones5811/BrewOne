@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
 
-    "password": "Freedom21",
+    "password": "",
     "database": "brew_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
