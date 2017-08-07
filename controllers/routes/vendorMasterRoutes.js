@@ -11,7 +11,8 @@ module.exports = function(app) {
   
   //Create Reciept of goods for a user
 	app.post("/api/newvendorMaster", function(req, res) {
-    db.vendorMaster.create({
+    console.log(req.body);
+    db.VendorMaster.create({
       vendorname: req.body.vendorname,
       telephone_number: req.body.telephone_number,
       email: req.body.email,
