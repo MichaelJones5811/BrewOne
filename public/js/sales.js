@@ -8,7 +8,16 @@ $.get("/api/recipe", function(req) {
 $("#submit-sales").on("click", function() {
     var chosenItem = $("#beerType").val().trim();
     var pintsSold = $("#pintsSold").val().trim();
+    var salesInfo = {
+        "item_sold": chosenItem,
+        "total_sales_units": pintsSold
+    };
     var ingredientOne = {};
+    var ingredientTwo = {};
+    var ingredientThree = {};
+    var ingredientFour = {};
+    var ingredientFive = {};
+    var ingredientSix = {};
     $.get("/api/recipe", function(request) {
         $.get("/api/ingredients", function(data) {
             for (var i = 0; i < request.length; i++) {
@@ -25,11 +34,72 @@ $("#submit-sales").on("click", function() {
                             }
                         }
                     }
+                    if (request[i].ingredient_two != null) {
+                        var ingredientTwoAdjust = (request[i].quantity_two / 165) *  pintsSold;
+                        console.log(ingredientTwoAdjust);
+                        for (var j = 0; j < data.length; j++) {
+                            if (request[i].ingredient_two == data[j].ingredient) {
+                                var newIngredientTwoAmt = data[j].quantity - ingredientTwoAdjust;
+                                ingredientTwo["id"] = data[j].id;
+                                ingredientTwo["quantity"] = newIngredientTwoAmt;
+                                updateIngredient(ingredientTwo);
+                            }
+                        }
+                    }
+                    if (request[i].ingredient_three != null) {
+                        var ingredientThreeAdjust = (request[i].quantity_three / 165) *  pintsSold;
+                        console.log(ingredientThreeAdjust);
+                        for (var j = 0; j < data.length; j++) {
+                            if (request[i].ingredient_three == data[j].ingredient) {
+                                var newIngredientThreeAmt = data[j].quantity - ingredientThreeAdjust;
+                                ingredientThree["id"] = data[j].id;
+                                ingredientThree["quantity"] = newIngredientThreeAmt;
+                                updateIngredient(ingredientThree);
+                            }
+                        }
+                    }
+                    if (request[i].ingredient_four != null) {
+                        var ingredientFourAdjust = (request[i].quantity_four / 165) *  pintsSold;
+                        console.log(ingredientFourAdjust);
+                        for (var j = 0; j < data.length; j++) {
+                            if (request[i].ingredient_four == data[j].ingredient) {
+                                var newIngredientFourAmt = data[j].quantity - ingredientFourAdjust;
+                                ingredientFour["id"] = data[j].id;
+                                ingredientFour["quantity"] = newIngredientFourAmt;
+                                updateIngredient(ingredientFour);
+                            }
+                        }
+                    }
+                    if (request[i].ingredient_five != null) {
+                        var ingredientFiveAdjust = (request[i].quantity_five / 165) *  pintsSold;
+                        console.log(ingredientFiveAdjust);
+                        for (var j = 0; j < data.length; j++) {
+                            if (request[i].ingredient_five == data[j].ingredient) {
+                                var newIngredientFiveAmt = data[j].quantity - ingredientFiveAdjust;
+                                ingredientFive["id"] = data[j].id;
+                                ingredientFive["quantity"] = newIngredientFiveAmt;
+                                updateIngredient(ingredientFive);
+                            }
+                        }
+                    }
+                    if (request[i].ingredient_six != null) {
+                        var ingredientSixAdjust = (request[i].quantity_six / 165) *  pintsSold;
+                        console.log(ingredientSixAdjust);
+                        for (var j = 0; j < data.length; j++) {
+                            if (request[i].ingredient_six == data[j].ingredient) {
+                                var newIngredientSixAmt = data[j].quantity - ingredientSixAdjust;
+                                ingredientSix["id"] = data[j].id;
+                                ingredientSix["quantity"] = newIngredientSixAmt;
+                                updateIngredient(ingredientSix);
+                            }
+                        }
+                    }
                 }
             }
         });
     });
-}) ;
+    createSale(salesInfo);
+});
 
 
 //Equation:
@@ -50,6 +120,17 @@ function updateIngredient(info) {
       data: info
     })
     .done(function() {
-        console.log("Yay Success One");
+        console.log("Yay Success");
+    });
+}
+
+function createSale(info) {
+    $.ajax({
+      method: "POST",
+      url: "/api/sales",
+      data: info
+    })
+    .done(function() {
+        console.log("Yay Created");
     });
 }
