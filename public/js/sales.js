@@ -132,5 +132,7 @@ function createSale(info) {
     })
     .done(function() {
         console.log("Yay Created");
+        $("#salesMessage").html("<p>Submission Successful!</p>")
+        $("#pintsSold").val("");
     });
 }
