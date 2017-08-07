@@ -33,11 +33,12 @@ require("./controllers/routes/recipeRoutes.js")(app);
 require("./controllers/routes/receiptRoutes.js")(app);
 require("./controllers/routes/vendorMasterRoutes.js")(app);
 require("./controllers/routes/htmlRoutes.js")(app);
+require("./controllers/routes/ingredientRoutes.js")(app);
 
 
 
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync({force: false}).then(function() {
+db.sequelize.sync({force: true}).then(function() {
   app.listen(PORT, function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
