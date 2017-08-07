@@ -1,7 +1,6 @@
 {
   "development": {
     "username": "root",
-
     "password": "",
     "database": "brew_db",
     "host": "127.0.0.1",
