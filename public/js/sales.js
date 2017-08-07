@@ -8,17 +8,26 @@ $.get("/api/recipe", function(req) {
 $("#submit-sales").on("click", function() {
     var chosenItem = $("#beerType").val().trim();
     var pintsSold = $("#pintsSold").val().trim();
-    var ingredientAdjust = {};
+    var ingredientOne = {};
     $.get("/api/recipe", function(request) {
-        for (var i = 0; i < request.length; i++) {
-            if (request[i].item === chosenItem) {
-                if (request[i].ingredient_one != null) {
-                    var ingredientOneAdjust = (request[i].quantity_one / 165) *  pintsSold;
-                    console.log(ingredientOneAdjust);
-                    ingredientAdjust[request[i].ingredient_one] =
+        $.get("/api/ingredients", function(data) {
+            for (var i = 0; i < request.length; i++) {
+                if (request[i].item === chosenItem) {
+                    if (request[i].ingredient_one != null) {
+                        var ingredientOneAdjust = (request[i].quantity_one / 165) *  pintsSold;
+                        console.log(ingredientOneAdjust);
+                        for (var j = 0; j < data.length; j++) {
+                            if (request[i].ingredient_one == data[j].ingredient) {
+                                var newIngredientOneAmt = data[j].quantity - ingredientOneAdjust;
+                                ingredientOne["id"] = data[j].id;
+                                ingredientOne["quantity"] = newIngredientOneAmt;
+                                updateIngredient(ingredientOne);
+                            }
+                        }
+                    }
                 }
             }
-        }
+        });
     });
 }) ;
 
@@ -31,3 +40,16 @@ $("#submit-sales").on("click", function() {
 // 29.45 lbs of Malt are needed to make one keg of porter
 
 // (29.45/165)*500 = 89.24
+
+
+
+function updateIngredient(info) {
+    $.ajax({
+      method: "PUT",
+      url: "/api/ingredients",
+      data: info
+    })
+    .done(function() {
+        console.log("Yay Success One");
+    });
+}
