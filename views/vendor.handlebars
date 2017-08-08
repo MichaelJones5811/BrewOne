@@ -6,19 +6,22 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
       <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Receipts</a></li>
-      <li><a href="#">Inventory Losses</a></li>
-      <li><a href="#">Manage Vendors</a></li>
+      <li><a href="/receipts">Receipts</a></li>
+      <li><a href="/sales">Sales</a></li>
+      <li><a href="/inventoryadjust">Inventory Losses</a></li>
+      <li><a href="/beers">Manage Recipes</a></li>
     </ul>
   </div>
 </nav>
 <div class="container">
-    <div class="jumbotron text-center">
-		<h1>Vendor Management</h1>
-		<h3>Use this form to manage vendor information</h3>
+		
 		<form method="POST" action="/api/newvendorMaster">
 			<div class = "row">
 				<div class = "col-md-6">
+					<h1>Vendor Management</h1>
+				</div>
+				<div class = "col-md-6">
+				<h3>Use this form to manage vendor information</h3>
 					<div class = "form-group">
 	            		<label for = "vendorName">Enter Vendor Name: </label>
 	              		<input type="text" class = "form-control" name="vendorname" id="vendorname">
