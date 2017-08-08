@@ -5,7 +5,8 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     quantity: {
-      type: DataTypes.FLOAT
+      type: DataTypes.FLOAT,
+      allowNull: false
     }
   },{
     timestamps: false
