@@ -1,0 +1,9 @@
+body {
+	background-image: url("../background.png");
+  	background-size: cover;
+  }
+
+  h1 {
+  	font-style: bold;
+  	font-size: 120px
+  }
