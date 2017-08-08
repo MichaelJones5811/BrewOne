@@ -20,3 +20,11 @@ h3 {
 	padding: 30px;
 
 }
+
+.dangerLevel {
+    background: yellow;
+}
+
+.belowZero {
+    background: red;
+}
