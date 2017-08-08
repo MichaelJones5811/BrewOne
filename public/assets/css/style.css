@@ -7,18 +7,31 @@ body {
   	font-style: bold;
   	font-size: 120px;
   	text-align: center;
+  	font-family: 'Permanent Marker', cursive;
   }
 
 h3 {
+	font-family: 'Permanent Marker', cursive;
 	font-style: italic;
 }
 
-.container {
-	background: rgba(174, 151, 128, 0.7);;
-	width: 100%;
-	margin-top: 125px;
-	padding: 30px;
+label {
+	font-family: 'Comfortaa', cursive;
+}
 
+.nav {
+	font-family: 'Comfortaa', cursive;
+}
+
+button {
+	font-family: 'Comfortaa', cursive;
+	font-style: bold;
+}
+
+.container {
+	
+	width: 100%;
+	padding: 30px;
 }
 
 .dangerLevel {
@@ -27,4 +40,9 @@ h3 {
 
 .belowZero {
     background: red;
+
+#form-container {
+	padding: 10px;
+	margin-top: 30px;
+	background-color: rgba(174, 151, 128, 0.7);
 }
