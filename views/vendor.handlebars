@@ -4,10 +4,10 @@
       <a class="navbar-brand" href="#">BrewOne</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="/receipts">Receipts</a></li>
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
       <li><a href="/sales">Sales</a></li>
+      <li><a href="/receipts">Receipts</a></li>
       <li><a href="/inventoryadjust">Inventory Losses</a></li>
       <li><a href="/beers">Manage Recipes</a></li>
     </ul>
@@ -18,9 +18,10 @@
 		<form method="POST" action="/api/newvendorMaster">
 			<div class = "row">
 				<div class = "col-md-6">
-					<h1>Vendor Management</h1>
+					<h1>Manage Vendors</h1>
 				</div>
 				<div class = "col-md-6">
+				<div class="container" id = "form-container">
 				<h3>Use this form to manage vendor information</h3>
 					<div class = "form-group">
 	            		<label for = "vendorName">Enter Vendor Name: </label>
@@ -52,7 +53,7 @@
 	              	</div>
 	              	<button class="btn btn-danger" type="submit" id = "submit-vendor">Add Vendor</button>
 	            </div>
-	            <div class = "col-md-6"></div>
+	           </div>
 	        </div>
 	    </div>
 		</form>
