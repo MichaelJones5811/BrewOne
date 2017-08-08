@@ -1,8 +1,11 @@
 
 getIngredients();
 
+displayCurrentRecipes();
 
-$("#submitBeer").on("click", function() {
+
+$("#submitBeer").on("click", function(event) {
+    event.preventDefault();
     var beerName = $("#beerName").val().trim();
     var ingredientOne = $("#ingredient1").val().trim();
     var qtyOne = $("#qt1").val().trim();
@@ -70,6 +73,8 @@ function createBeer(info) {
     .done(function() {
         console.log("Yay Created");
         emptyForm();
+        displayCurrentRecipes();
+
     });
 }
 
@@ -113,5 +118,62 @@ function getIngredients() {
         for (var i = 0; i < req.length; i++) {
             $(".ingredientType").append("<option value='" + req[i].ingredient + "'>" + req[i].ingredient + "</option>");
         }
+    });
+}
+
+
+function deleteRecipe(info) {
+    $.ajax({
+      method: "POST",
+      url: "/deleterecipe",
+      data: info
+    })
+    .done(function() {
+        displayCurrentRecipes();
+        console.log("Deleted!");
+    });
+  }
+
+  function displayCurrentRecipes() {
+    $("#currentBeerDisplay").empty();
+    $.get("/api/recipe", function(req) {
+        for (var i = 0; i < req.length; i++) {
+            var wellSection = $("<div>");
+                // Add a class to this div: 'well'
+                    wellSection.addClass("well");
+                // Add an id to the well to mark which well it is
+                    wellSection.attr("id", "beer-well-" + i);
+
+                 // Append the well to the well section
+                    $("#currentBeerDisplay").prepend(wellSection);
+                    $("#beer-well-" + i).append("<h4>" + req[i].item + "</h4>");
+                    $("#beer-well-" + i).append("<p><strong>1.) Ingredient: </strong>" + req[i].ingredient_one + ", <strong>Amount for Recipe: </strong>" + req[i].quantity_one + "</p>");
+                    if (req[i].ingredient_two != null) {
+                        $("#beer-well-" + i).append("<p><strong>2.) Ingredient: </strong>" + req[i].ingredient_two + ", <strong>Amount for Recipe: </strong>" + req[i].quantity_two + "</p>");
+                    }
+                    if (req[i].ingredient_three != null) {
+                        $("#beer-well-" + i).append("<p><strong>3.) Ingredient: </strong>" + req[i].ingredient_three + ", <strong>Amount for Recipe: </strong>" + req[i].quantity_three + "</p>");
+                    }
+                    if (req[i].ingredient_four != null) {
+                        $("#beer-well-" + i).append("<p><strong>4.) Ingredient: </strong>" + req[i].ingredient_four + ", <strong>Amount for Recipe: </strong>" + req[i].quantity_four + "</p>");
+                    }
+                    if (req[i].ingredient_five != null) {
+                        $("#beer-well-" + i).append("<p><strong>5.) Ingredient: </strong>" + req[i].ingredient_five + ", <strong>Amount for Recipe: </strong>" + req[i].quantity_five + "</p>");
+                    }
+                    if (req[i].ingredient_six != null) {
+                        $("#beer-well-" + i).append("<p><strong>6.) Ingredient: </strong>" + req[i].ingredient_six + ", <strong>Amount for Recipe: </strong>" + req[i].quantity_six + "</p>");
+                    }
+                    $("#beer-well-" + i).append("<button class='btn btn-danger btn-xs deleteRecipe' data-id='" + req[i].id + "'>Delete</button>");
+
+        }
+        $(".deleteRecipe").on("click", function(event) {
+            event.preventDefault();
+            console.log()
+            var delRecipe = {
+                id: $(this).attr("data-id")
+            };
+            deleteRecipe(delRecipe);
+        });
+
     });
 }
