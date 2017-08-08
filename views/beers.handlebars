@@ -1,53 +1,75 @@
 <div class="container">
     <div class="jumbotron text-center">
-		<h3>Use This Form To Order New Beer Ingredient</h3>
-		<form method="POST" action="/api/newvendorMaster">
+		<form>
 			<div class = "row">
 				<div class = "col-md-6">
+					<h3>Enter a New Beer Recipe</h3>
 					<div class = "form-group">
-	            		<label for = "beer-name">Enter Your Beer Name </label>
-	              		<input type="text" class = "form-control" name="beer-name" id="beer-name">
+	            		<label>Enter Your Beer Name </label>
+	              		<input type="text" class = "form-control" name="beerName" id="beerName">
 	              	</div>
 					<div class = "form-group">
-	            		<label for = "ingredient1">Ingredient 1: </label>
-	              		<input type="text" class = "form-control" name="ingredient1" id="ingredient1">
-	              		<label for = "ingredient1">Qty: </label>
-	              		<input type="text" class = "form-control" name="ingredient1" id="ingredient1">
+	            		<label>Ingredient 1: </label>
+	              		<select class="ingredientType" class="form-control" id="ingredient1">
+                		</select>
+	              		<label>Qty(lbs): </label>
+	              		<input type="text" size="4" name="qt1" id="qt1">
 	              	</div>
 	              	<div class = "form-group">
-	            		<label for = "ingredient2">Ingredient 2: </label>
-	              		<input type="text" class = "form-control" name="ingredient2" id="ingredien2">
-	              		<label for = "ingredient2">Qty: </label>
-	              		<input type="text" class = "form-control" name="ingredient2" id="ingredient2">
+	            		<label>Ingredient 2: </label>
+	              		<select class="ingredientType" class="form-control" id="ingredient2">
+                		</select>
+	              		<label>Qty(lbs): </label>
+	              		<input type="text" size="4" name="qt2" id="qt2">
 	              	</div>
 	              	<div class = "form-group">
-	            		<label for = "ingredient3">Ingredient 3: </label>
-	              		<input type="text" class = "form-control" name="ingredient3" id="ingredient3">
-	              		<label for = "ingredient3">Qty: </label>
-	              		<input type="text" class = "form-control" name="ingredient3" id="ingredient3">
+	            		<label>Ingredient 3: </label>
+	              		<select class="ingredientType" class="form-control" id="ingredient3">
+                		</select>
+	              		<label>Qty(lbs): </label>
+	              		<input type="text" size="4" name="qt3" id="qt3">
 	              	</div>
 	              	<div class = "form-group">
-	            		<label for = "ingredient4">Ingredient 4: </label>
-	              		<input type="text" class = "form-control" name="ingredient4" id="ingredient4">
-	              		<label for = "ingredient4">Qty: </label>
-	              		<input type="text" class = "form-control" name="ingredient4" id="ingredient4">
+	            		<label>Ingredient 4: </label>
+	              		<select class="ingredientType" class="form-control" id="ingredient4">
+                		</select>
+	              		<label>Qty(lbs): </label>
+	              		<input type="text" size="4" name="qt4" id="qt4">
 	              	</div>
 	              	<div class = "form-group">
-	            		<label for = "ingredient5">Ingredient 5: </label>
-	              		<input type="text" class = "form-control" name="ingredient5" id="ingredient5">
-	              		<label for = "ingredient5">Qty: </label>
-	              		<input type="text" class = "form-control" name="ingredient5" id="ingredient5">
+	            		<label>Ingredient 5: </label>
+	              		<select class="ingredientType" class="form-control" id="ingredient5">
+                		</select>
+	              		<label>Qty(lbs): </label>
+	              		<input type="text" size="4" name="qt5" id="qt5">
 	              	</div>
 	              	<div class = "form-group">
-	            		<label for = "ingredient6">Ingredient 6: </label>
-	              		<input type="text" class = "form-control" name="ingredient1" id="ingredient6">
-	              		<label for = "ingredient6">Qty: </label>
-	              		<input type="text" class = "form-control" name="ingredient1" id="ingredient6">
+	            		<label>Ingredient 6: </label>
+	              		<select class="ingredientType" class="form-control" id="ingredient6">
+                		</select>
+	              		<label>Qty(lbs): </label>
+	              		<input type="text" size="4" name="qt6" id="qt6">
 	              	</div>
+	              	<button class="btn btn-danger" id="submitBeer">Save Beer</button>
+	              	</form>
 	              	<br>
-	              	<button class="btn btn-danger" type="submit" id="submit-vendor">Order</button>
-	            	</div?
-	            
+	            	</div>
+	            	<div class="col-md-6">
+	            		<h3>Missing an Ingredient?</h3>
+						<form>
+							<div class = "form-group">
+	            				<label>Name of New Ingredient:</label>
+	              				<input type="text" class="form-control" id="ingredientName">
+	              			</div>
+	              			<div class = "form-group">
+	              				<label>Current Amount in Inventory(lbs):</label>
+	              				<input type="text" size="4" id="ingredientAmount">
+	              				<div><button class="btn btn-success" id="saveIngredient">Save Ingredient</button></div>
+	              			</div>
+	              			<div id="ingrediantMessageDisplay"></div>
+	              		</form>
+	            	</div>
 	    	</div>
-		</form>
 </div>
+
+<script src="js/beers.js" type="text/javascript"></script>
