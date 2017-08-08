@@ -17,22 +17,26 @@
     <div class="jumbotron text-center">
 		<h1>Weekly Receipts</h1>
 		<h3>Use the form below to record received inventory for the week</h3>
+		<form method="POST" action="/api/newreceipt">
 			<div class = "row">
 				<div class = "col-md-6">
+				
 					<div class = "form-group">
 	            		<label for = "ingredientRecpt">Enter Ingredient Received: </label>
-	              		<input type="text" class = "form-control" id="ingredientRecpt-input">
+	              		<input type="text" class = "form-control" name= "ingredient" id="ingredientRecpt-input">
 	              	</div>
 	              	<div class = "form-group">
 	            		<label for = "qtyRec">Enter Quantity Received: </label>
-	              		<input type="text" class = "form-control" id="qtyRec-input">
+	              		<input type="text" class = "form-control" name = "quantity" id="qtyRec-input">
 	              	</div>
 	              	<div class = "form-group">
 	            		<label for = "vendor">Enter Vendor</label>
-	              		<input type="text" class = "form-control" id="vendor-input">
+	              		<input type="text" class = "form-control" name = "vendorname" id="vendor-input">
 	              	</div>
-	              	<button class="btn btn-danger" id = "submit-recpt">Receive Ingredient</button>
+	              	<button class="btn btn-danger" type="submit"id = "submit-recpt">Receive Ingredient</button>
+				 
 	            </div>
+				 </form>
 	            <div class = "col-md-6"></div>
 	        </div>
 	    </div>

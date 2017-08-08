@@ -33,6 +33,8 @@ require("./controllers/routes/recipeRoutes.js")(app);
 require("./controllers/routes/receiptRoutes.js")(app);
 require("./controllers/routes/vendorMasterRoutes.js")(app);
 require("./controllers/routes/htmlRoutes.js")(app);
+require("./controllers/routes/ingredientRoutes.js")(app);
+require("./controllers/routes/salesRoutes.js")(app);
 
 
 

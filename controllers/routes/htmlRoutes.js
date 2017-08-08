@@ -16,4 +16,8 @@ module.exports = function(app, passport) {
         res.render("vendor");
     });
 
+    app.get("/beers", function(req, res) {
+        res.render("beers");
+    });
+
 }

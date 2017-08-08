@@ -1,7 +1,7 @@
 var db = require("../../models");
 
 module.exports = function(app) {
-   
+
 //Create Recipe
 app.post("/api/recipe", function(req, res) {
         db.Recipe.create(req.body).then(function(recipe) {
