@@ -20,4 +20,7 @@ module.exports = function(app, passport) {
         res.render("beers");
     });
 
+    app.get("/dashboard", function(req, res) {
+        res.render("dashboard")
+    })
 }

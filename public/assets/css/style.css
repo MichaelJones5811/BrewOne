@@ -34,6 +34,13 @@ button {
 	padding: 30px;
 }
 
+.dangerLevel {
+    background: yellow;
+}
+
+.belowZero {
+    background: red;
+
 #form-container {
 	padding: 10px;
 	margin-top: 30px;
