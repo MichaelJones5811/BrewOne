@@ -1,0 +1,22 @@
+body {
+	background-image: url("../background.png");
+  	background-size: cover;
+  }
+
+ h1 {
+  	font-style: bold;
+  	font-size: 120px;
+  	text-align: center;
+  }
+
+h3 {
+	font-style: italic;
+}
+
+.container {
+	background: rgba(174, 151, 128, 0.7);;
+	width: 100%;
+	margin-top: 125px;
+	padding: 30px;
+
+}

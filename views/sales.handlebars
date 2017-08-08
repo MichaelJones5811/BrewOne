@@ -1,22 +1,38 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">BrewOne</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="/receipts">Receipts</a></li>
+      <li><a href="/inventoryadjust">Inventory Losses</a></li>
+      <li><a href="/vendor">Manage Vendors</a></li>
+      <li><a href="/beers">Manage Recipes</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container">
-    <div class="jumbotron text-center">
-		<h1>Weekly Sales</h1>
-		<h3>Use the form below to record weekly sales for each beer</h3>
-			<div class = "row">
-				<div class = "col-md-6">
-					<div class = "form-group">
-	            		<label for = "beerSold">Enter beer type sold: </label>
-	              		<select id="beerType" class="form-control" name="beerType">
-                		</select>
-	              	</div>
-	              	<div class = "form-group">
-	            		<label for = "pintsSold">Enter pints sold: </label>
-	              		<input type="text" class = "form-control" id="pintsSold">
-	              	</div>
-	              	<button class="btn btn-danger" id = "submit-sales">Submit Sales</button>
-	              	<div id="salesMessage"></div>
+	
+		<div class = "row">
+ 			<div class = "col-md-6">
+				<h1>Weekly Sales</h1>
+			</div>
+			<div class = "col-md-6">
+				<h3>Use the form below to record weekly sales for each beer</h3>
+				<div class = "form-group">
+	            	<label for = "beerSold">Enter beer type sold: </label>
+	              	<select id="beerType" class="form-control" name="beerType">
+                	</select>
 	            </div>
-	            <div class = "col-md-6"></div>
+	            <div class = "form-group">
+	            	<label for = "pintsSold">Enter pints sold: </label>
+	              	<input type="text" class = "form-control" id="pintsSold">
+	            </div>
+	            <button class="btn btn-danger" id = "submit-sales">Submit Sales</button>
+	            <div id="salesMessage"></div>  
 	        </div>
 	    </div>
 	</div>
