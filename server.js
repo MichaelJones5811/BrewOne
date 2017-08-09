@@ -37,7 +37,6 @@ require("./controllers/routes/ingredientRoutes.js")(app);
 require("./controllers/routes/salesRoutes.js")(app);
 
 
-
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync({force: false}).then(function() {
   app.listen(PORT, function() {

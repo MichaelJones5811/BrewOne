@@ -37,7 +37,8 @@ module.exports = function(app) {
             email: req.body.email,
             password: req.body.password,
             first_name: req.body.firstName,
-            last_name: req.body.lastName
+            last_name: req.body.lastName,
+            role: req.body.role
 
         });
         //.then(function() {
@@ -48,7 +49,7 @@ module.exports = function(app) {
         //   res.json(err);
         // });
         console.log("ok");
-        res.redirect("/members");
+        res.redirect("/dashboard");
       }
     });
 
