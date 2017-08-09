@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "Jordan23!",
+    "password": "",
 
-    "database": "brew3",
+    "database": "brew_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
