@@ -7,6 +7,9 @@ module.exports = function(sequelize, DataTypes) {
     quantity: {
       type: DataTypes.FLOAT,
       allowNull: false
+    },
+    recent_loss_note: {
+      type: DataTypes.STRING
     }
   },{
     timestamps: false

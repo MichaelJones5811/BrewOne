@@ -35,6 +35,16 @@ $.get("/api/ingredients", function(request) {
       belowZero.text("No");
       tableRow.append(belowZero);
     }
+
+     //Loss Note Column
+    var lossNote = $("<td>");
+    if (request[i].recent_loss_note != null) {
+      lossNote.text(request[i].recent_loss_note);
+      tableRow.append(lossNote);
+    } else{
+      lossNote.text("No losses");
+      tableRow.append(lossNote);
+    }
     $("#currentIngredients").append(tableRow);
 
   }
