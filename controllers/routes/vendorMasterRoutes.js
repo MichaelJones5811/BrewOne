@@ -8,7 +8,7 @@ module.exports = function(app) {
     });
 });//end of find all
   // update quanity
-  
+
   //Create Reciept of goods for a user
 	app.post("/api/newvendorMaster", function(req, res) {
     console.log(req.body);
@@ -20,12 +20,12 @@ module.exports = function(app) {
       city: req.body.city,
       state: req.body.state,
       zip: req.body.zip
-
-      
+    }).then(function(vendors) {
+      res.render("vendor");
     });
 
   });//end of create
 
-    
+
 
 }//end of exports
