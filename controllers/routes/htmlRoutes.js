@@ -22,5 +22,8 @@ module.exports = function(app, passport) {
 
     app.get("/dashboard", function(req, res) {
         res.render("dashboard")
-    })
+    });
+    app.get("/user", function(req, res) {
+        res.render("user")
+    });
 }
