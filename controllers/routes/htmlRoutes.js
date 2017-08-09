@@ -24,6 +24,6 @@ module.exports = function(app, passport) {
         res.render("dashboard")
     });
     app.get("/user", function(req, res) {
-        res.render("user")
+        res.render("users")
     });
 }
