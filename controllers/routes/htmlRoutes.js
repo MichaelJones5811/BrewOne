@@ -20,10 +20,13 @@ module.exports = function(app, passport) {
         res.render("beers");
     });
 
-    app.get("/dashboard", function(req, res) {
-        res.render("dashboard")
+    app.get("/", function(req, res) {
+        res.render("dashboard");
     });
     app.get("/user", function(req, res) {
-        res.render("users")
+        res.render("users");
+    });
+     app.get("/login", function(req, res) {
+        res.render("login");
     });
 }

@@ -1,7 +1,9 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require('express-handlebars');
-
+var passport = require("./config/passport");
+var session = require("express-session");
+var expressValidator = require('express-validator');
 
 
 
@@ -15,6 +17,13 @@ require("./associations")(db);
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(expressValidator()); // this line must be immediately after any of the bodyParser middlewares!
+app.use(express.static("public"));
+
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.static("public"));
 
@@ -35,11 +44,10 @@ require("./controllers/routes/vendorMasterRoutes.js")(app);
 require("./controllers/routes/htmlRoutes.js")(app);
 require("./controllers/routes/ingredientRoutes.js")(app);
 require("./controllers/routes/salesRoutes.js")(app);
-
-
+require("./controllers/routes/userRoutes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync({force: false}).then(function() {
+db.sequelize.sync({force: true}).then(function() {
   app.listen(PORT, function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });

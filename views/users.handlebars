@@ -1,22 +1,11 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">BrewOne</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="/dashboard">Dashboard</a></li>
-      <li><a href="/Receipts">Receipts</a></li>
-      <li><a href="/inventoryadjust">Inventory Losses</a></li>
-      <li><a href="/vendor">Manage Vendors</a></li>
-    </ul>
-  </div>
-</nav>
+
+
 
 <div class="container">
 	<div class = "row">
 		<div class = "col-md-6">
-			<h1>User Login</h1>
+			<h1>Create User</h1>
+
 		</div>
 		<div class = "col-md-6">
 			<form  method="POST" action="/api/user">
@@ -35,15 +24,19 @@
 					</div>  
 					<div class = "form-group">
 					    <label>Password: </label>
-					        <input type="text" class = "form-control" name="password" />
+
+					        <input type="password" class = "form-control" name="password" />
+
 					</div>
 					<div class="dropdown">
 						<button class="btn btn-primary dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Role:
 							<span class="caret"></span></button>
 								<ul class="dropdown-menu">
-									<a><li>Sale</li></a>
-									<a><li>Receipt</li></a>
-									<a><li>Admin</li></a>
+
+									<a><li name = "sales">Sales</li></a>
+									<a><li name = "receipt">Receipt</li></a>
+									<a><li name = "admin">Admin</li></a>
+
 								</ul>
 					</div>	
 					<button class="btn btn-danger" type="submit" value="Log-in"/>Log In</button>

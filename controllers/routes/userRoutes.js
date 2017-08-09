@@ -1,6 +1,6 @@
 var db = require("../../models");
 var path = require("path");
-var passport = require("../config/passport");
+var passport = require("../../config/passport");
 var expressValidator = require('express-validator');
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -19,16 +19,16 @@ module.exports = function(app) {
     // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
     // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
     // otherwise send back an error
-    app.post("/api/User", function(req, res,next) {
+    app.post("/api/user", function(req, res,next) {
      
         req.checkBody('password', 'Password must be between 8-100 characters long.').len(8, 100);
         req.checkBody('password', "Password must include one lowercase character, one uppercase character, a number, and a special character.").matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* )(?=.*[^a-zA-Z0-9]).{8,}$/, "i");
-        req.checkBody('password2', 'Password must be between 8-100 characters long.').len(8, 100);
-        req.checkBody('password2', 'Passwords do not match, please try again.').equals(req.body.password);
+        
+       
         const errors = req.validationErrors();
         if (errors) {
           //res.render("createProfile.html",{errors});
-          res.render(path.join(__dirname + "/../public/createProfile.html"),{errors});
+         // res.render(path.join(__dirname + "/../public/createProfile.html"),{errors});
            throw console.log(errors);
 
         }
@@ -37,7 +37,8 @@ module.exports = function(app) {
             email: req.body.email,
             password: req.body.password,
             first_name: req.body.firstName,
-            last_name: req.body.lastName
+            last_name: req.body.lastName,
+            role: req.body.role
 
         });
         //.then(function() {
@@ -48,7 +49,7 @@ module.exports = function(app) {
         //   res.json(err);
         // });
         console.log("ok");
-        res.redirect("/members");
+        res.redirect("/");
       }
     });
 

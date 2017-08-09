@@ -58,7 +58,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     role:{
         type: DataTypes.STRING,
-      allowNull: false
+      // allowNull: false
     }
   },
 
