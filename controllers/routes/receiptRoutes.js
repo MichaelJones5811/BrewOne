@@ -22,6 +22,7 @@ module.exports = function(app) {
     db.Receipt.create({
       ingredient: req.body.ingredient,
       quantity: req.body.quantity,
+      VendorId: req.body.vendor
       
     });
 

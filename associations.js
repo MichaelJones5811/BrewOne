@@ -12,5 +12,5 @@ module.exports = function(db) {
   //
   db.Receipt.belongsTo(db.VendorMaster, { foreignKey:  { allowNull: false } });
   db.VendorMaster.hasMany(db.Receipt, { onDelete: "cascade" });
-}
+ }
 
