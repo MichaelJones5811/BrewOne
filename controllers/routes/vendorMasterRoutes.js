@@ -3,7 +3,7 @@ var db = require("../../models");
 module.exports = function(app) {
     //find all the entrys in the reciept db
     app.get("/api/vendors", function(req, res) {
-    db.vendorMaster.findAll().then(function(brew_db) {
+    db.VendorMaster.findAll().then(function(brew_db) {
       res.json(brew_db);
     });
 });//end of find all
